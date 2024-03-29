@@ -1,7 +1,5 @@
 import requests, json, os, sys
 
-
-
 def getBaseToken(token_address):
     url =  f"https://api.dexscreener.com/latest/dex/pairs/solana/{token_address}"
     response = requests.get(url).json()
@@ -23,7 +21,6 @@ def get_price(token_address):
     else:
         return response['pairs'][0]['priceUsd']
     return None
-
 
 
 """Common addresses like usdc and usdt will be excluded as we know their symbols"""
